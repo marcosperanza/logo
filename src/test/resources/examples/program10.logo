@@ -1,0 +1,51 @@
+/*
+ *
+ * Copyright 2003-2011 Simple Logo Viewer
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+/*to tree2 :length
+if :length <2 [stop]
+lt 45
+forward :length
+tree2 :length/2
+back :length
+rt 90
+forward :length
+tree2 :length/2
+back :length
+left 45
+end
+*/
+
+Per tree2 :length
+	Se :length < 2 [
+		Termina
+	]
+	Sinistra 45
+	Avanti :length
+	tree2 :length / 2
+	Indietro :length
+	Destra 90
+	Avanti :length
+	tree2 :length / 2
+	Indietro :length
+	Sinistra 45
+Fine
+
+Ripeti 200 [
+	tree2 256
+	Destra 2
+]
+

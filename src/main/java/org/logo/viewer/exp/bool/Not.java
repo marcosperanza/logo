@@ -1,0 +1,54 @@
+/**
+ *
+ * Copyright 2003-2011 Simple Logo Viewer
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+package org.logo.viewer.exp.bool;
+
+import org.logo.viewer.logo.exception.VariableNotFoundException;
+
+/**
+ * Not
+ * 
+ * @author Marco Speranza
+ * @version 0.2
+ */
+public class Not implements ExpBool {
+
+	/** lato sx dell'espressione */
+	private ExpBool a;
+
+	/**
+	 * Creates a new instance of Not
+	 * 
+	 * @param a
+	 *            Lato sx dell'espressione
+	 */
+	public Not(ExpBool a) {
+		this.a = a;
+	}
+
+	/**
+	 * Valuta l'espressione
+	 * 
+	 * @throws VariableNotFoundException
+	 *             Variabile non trovata
+	 * @return true se ha trovato la variabile
+	 */
+	public boolean val() throws VariableNotFoundException {
+		return !a.val();
+	}
+
+}
